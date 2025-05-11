@@ -103,6 +103,7 @@ const App = () => {
             <FormGrid formName="Payment details" border>
               <InputField
                 label="Card number"
+                id='card-number'
                 placeholder="1234 5678 9012 3456"
                 {...register("cardNumber")}
                 icon={<img src={mastercardlogo} className="w-7" alt="logo" />}
@@ -110,6 +111,7 @@ const App = () => {
               />
               <InputField
                 label="Cardholder name"
+                id="cardholder-name"
                 placeholder="John Doe"
                 {...register("nameOnCard")}
                 error={errors.nameOnCard?.message}
@@ -118,6 +120,7 @@ const App = () => {
                 <div className="flex-1">
                   <InputField
                     label="Expiry"
+                    id='expiry-date'
                     placeholder="MM/YY"
                     {...register("expirationDate")}
                     error={errors.expirationDate?.message}
@@ -126,6 +129,7 @@ const App = () => {
                 <div className="flex-1">
                   <InputField
                     label="CVC"
+                    id='cvc'
                     placeholder="123"
                     {...register("cvc")}
                     error={errors.cvc?.message}
@@ -136,6 +140,7 @@ const App = () => {
             <FormGrid formName="Email address" border>
               <InputField
                 label="Email address"
+                id='email'
                 placeholder="user@example.com"
                 {...register("email")}
                 error={errors.email?.message}
@@ -144,6 +149,7 @@ const App = () => {
             <FormGrid>
               <InputField
                 label="Country / Region"
+                id='country-select'
                 select
                 defaultOption="Select a country"
                 selectOptions={countryOptions}
@@ -152,11 +158,13 @@ const App = () => {
               />
               <InputField
                 label="Address"
+                id='address'
                 placeholder="Street address"
                 {...register("addressStreet")}
                 error={errors.addressStreet?.message}
               />
               <InputField
+                id='apartment'
                 placeholder="Apartment, suite, etc. (optional)"
                 {...register("buildingType")}
                 error={errors.buildingType?.message}
@@ -165,6 +173,7 @@ const App = () => {
                 <div className="flex-1">
                   <InputField
                     label="City"
+                    id='city'
                     placeholder="City"
                     {...register("city")}
                     error={errors.city?.message}
@@ -173,6 +182,7 @@ const App = () => {
                 <div className="flex-1">
                   <InputField
                     label="State"
+                    id='state-select'
                     select
                     defaultOption="State"
                     selectOptions={stateOptions}
@@ -184,6 +194,7 @@ const App = () => {
                 <div className="flex-1">
                   <InputField
                     label="Zip"
+                    id='zip'
                     placeholder="01000"
                     {...register("zip")}
                     error={errors.zip?.message}

@@ -9,13 +9,14 @@ const InputField = ({
   select,
   defaultOption,
   selectOptions,
+  id,
   ...rest
 }) => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
     <div className="mb-4">
-      {label && <label className="block mb-1">{label}</label>}
+      {label && <label htmlFor={id} className="block mb-1">{label}</label>}
 
       <div
         className={`flex bg-neutral-100 items-center border px-2 py-2 rounded-lg outline-none ${
@@ -30,7 +31,8 @@ const InputField = ({
       >
         {icon && <div className="mr-2">{icon}</div>}
         {select ? (
-          <select 
+          <select
+          id={id} 
           className="text-base focus:outline-none w-full rounded-md border-neutral-300 text-neutral-500"
           disabled={disabled}
           {...rest}>
@@ -44,7 +46,7 @@ const InputField = ({
             ))}
           </select>
         ) : (
-          <input
+          <input id={id}
             className="text-base w-full focus:outline-none"
             disabled={disabled}
             {...rest}
